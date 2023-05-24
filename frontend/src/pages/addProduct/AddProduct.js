@@ -58,7 +58,6 @@ const AddProduct = () => {
     console.log(...formData);
 
     await dispatch(createProduct(formData));
-
     navigate("/dashboard");
   };
 

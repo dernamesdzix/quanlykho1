@@ -20,7 +20,7 @@ const createProduct = asyncHandler(async (req, res) => {
     let uploadedFile;
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
-        folder: "Pinvent App",
+        folder: "QuanLyKho-App",
         resource_type: "image",
       });
     } catch (error) {
@@ -115,7 +115,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     let uploadedFile;
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
-        folder: "Pinvent App",
+        folder: "QuanLyKho-App",
         resource_type: "image",
       });
     } catch (error) {
@@ -147,8 +147,10 @@ const updateProduct = asyncHandler(async (req, res) => {
       runValidators: true,
     }
   );
+  // Save product to the database
+await product.save();
+res.status(200).json(updatedProduct);
 
-  res.status(200).json(updatedProduct);
 });
 
 module.exports = {
