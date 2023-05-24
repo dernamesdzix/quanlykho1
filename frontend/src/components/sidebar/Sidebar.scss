@@ -7,10 +7,10 @@ main {
   color: #ccc;
 }
 .sidebar {
-  position: auto;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 230px;
   height: 100vh;
   flex-shrink: 0;
   background-color: var(--color-white);
@@ -22,19 +22,19 @@ main {
 .top_section {
   display: flex;
   align-items: center;
-  padding: 10px 30px;
+  padding: 10px 20px;
   // border-bottom: 2px solid #ccc;
   transition: all 0.5s;
   background-color: var(--dark-blue);
-  height: 75px;
+  height: 70px;
 }
 .logo {
-  font-size: 30px;
+  font-size: 40px;
   color: var(--color-white);
 }
 .bars {
   display: flex;
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 70px;
   cursor: pointer;
   color: var(--color-white);
@@ -47,7 +47,7 @@ main {
 }
 
 .sidebar-item {
-  padding: 0.5em 1em;
+  padding: 0.75em 1em;
   display: block;
   // border-radius: 5px;
   // border-bottom: 2px solid #ccc;
