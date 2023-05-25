@@ -3,7 +3,7 @@ const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
 const cloudinary = require("cloudinary").v2;
 
-// Create Prouct
+// Create Product
 const createProduct = asyncHandler(async (req, res) => {
   const { name, sku, category, quantity, price, description } = req.body;
 
@@ -14,9 +14,10 @@ const createProduct = asyncHandler(async (req, res) => {
   }
 
   // Handle Image upload
-  let fileData = {};
+  let fileData = {}
   if (req.file) {
-    // Save image to cloudinary
+
+  // Save image to cloudinary
     let uploadedFile;
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
@@ -24,17 +25,18 @@ const createProduct = asyncHandler(async (req, res) => {
         resource_type: "image",
       });
     } catch (error) {
+      console.log(error); // Log the error object for debugging purposes
       res.status(500);
       throw new Error("Image could not be uploaded");
     }
-
+    
     fileData = {
       fileName: req.file.originalname,
       filePath: uploadedFile.secure_url,
       fileType: req.file.mimetype,
       fileSize: fileSizeFormatter(req.file.size, 2),
     };
-  }
+  };
 
   // Create Product
   const product = await Product.create({
@@ -49,7 +51,9 @@ const createProduct = asyncHandler(async (req, res) => {
   });
 
   res.status(201).json(product);
+  
 });
+ 
 
 // Get all Products
 const getProducts = asyncHandler(async (req, res) => {
