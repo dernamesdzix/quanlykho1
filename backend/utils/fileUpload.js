@@ -1,21 +1,20 @@
 const multer = require("multer");
-const path = require("path");
 
 // Define file storage
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: function (req, file, cb) {
     cb(null, "uploads");
   },
-  filename: (req, file, cb) => {
+  filename: function (req, file, cb) {
     cb(
       null,
       new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
-    );
+    ); // 23/08/2022
   },
 });
 
-// Specify the type of files that can be saved
-const fileFilter = (req, file, cb) => {
+// Specify file format that can be saved
+function fileFilter(req, file, cb) {
   if (
     file.mimetype === "image/png" ||
     file.mimetype === "image/jpg" ||
@@ -25,10 +24,9 @@ const fileFilter = (req, file, cb) => {
   } else {
     cb(null, false);
   }
-};
+}
 
-const upload = multer({ storage: storage, fileFilter: fileFilter });
-
+const upload = multer({ storage, fileFilter });
 
 // File Size Formatter
 const fileSizeFormatter = (bytes, decimal) => {

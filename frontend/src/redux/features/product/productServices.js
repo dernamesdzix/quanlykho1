@@ -32,7 +32,7 @@ const updateProduct = async (id, formData) => {
   return response.data;
 };
 
-const productService = {
+const productServices = {
   createProduct,
   getProducts,
   getProduct,
@@ -40,4 +40,4 @@ const productService = {
   updateProduct,
 };
 
-export default productService;
+export default productServices;
