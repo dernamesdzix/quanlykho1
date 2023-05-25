@@ -6,7 +6,7 @@ import ProductForm from "../../components/product/productForm/ProductForm";
 import {
   createProduct,
   selectIsLoading,
-} from "../../redux/features/auth/product/productSlice";
+} from "../../redux/features/product/productSlice";
 
 const initialState = {
   name: "",

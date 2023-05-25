@@ -3,7 +3,7 @@ import useRedirectLoggedOutUser from '../../components/customHook/useRedirectLog
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/features/auth/authSlice';
 import ProductList from '../../components/product/productList/ProductList';
-import { getProducts } from "../../redux/features/auth/product/productSlice";
+import { getProducts } from "../../redux/features/product/productSlice";
 
 
 const Dashboard = () => {

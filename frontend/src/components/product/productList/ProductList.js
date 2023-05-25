@@ -5,7 +5,7 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
 import Search from '../../search/Search';
 import { useDispatch, useSelector} from "react-redux";
-import { FILTER_PRODUCTS, selectFilteredPoducts } from '../../../redux/features/auth/product/filterSlice';
+import { FILTER_PRODUCTS, selectFilteredPoducts } from '../../../redux/features/product/filterSlice';
 
 
 
