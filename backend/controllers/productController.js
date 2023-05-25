@@ -23,7 +23,7 @@ const createProduct = asyncHandler(async (req, res) => {
     try {
       uploadedFile = await cloudinary.uploader.upload(req.file.path, {
         folder: "QuanLyKho-App",
-        resource_type: "image",
+        resource_type: "Image",
       });
     } catch (error) {
       console.log(error); 
