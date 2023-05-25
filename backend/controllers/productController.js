@@ -25,7 +25,7 @@ const createProduct = asyncHandler(async (req, res) => {
         resource_type: "image",
       });
     } catch (error) {
-      console.log(error); // Log the error object for debugging purposes
+      console.log(error); 
       res.status(500);
       throw new Error("Image could not be uploaded");
     }
