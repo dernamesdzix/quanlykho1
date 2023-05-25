@@ -34,7 +34,7 @@ const ProductList = ({products, isLoading}) => {
             <div className='table'>
                 <div className='--flex-between --flex-dir-column'>
                     <span>
-                        <h3>Iventory Items</h3>
+                        <h3>Inventory Items</h3>
                     </span>
                     <span>
                         <Search value={search} onChange={(e) => 
