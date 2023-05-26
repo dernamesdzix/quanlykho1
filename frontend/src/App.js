@@ -15,10 +15,11 @@ import { SET_LOGIN } from "./redux/features/auth/authSlice";
 import AddProduct from "./pages/addProduct/AddProduct";
 import ProductDetail from "./components/product/productDetail/ProductDetail";
 import EditProduct from "./pages/editProduct/EditProduct";
-
+// import Profile from "./pages/profile/Profile";
+// import EditProfile from "./pages/profile/EditProfile";
+// import Contact from "./pages/contact/Contact";
 
 axios.defaults.withCredentials = true;
-
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +39,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-     
+        {/* <Route path="/forgot" element={<Forgot />} />
+        <Route path="/resetpassword/:resetToken" element={<Reset />} /> */}
 
         <Route
           path="/dashboard"
@@ -60,7 +62,7 @@ function App() {
             </Sidebar>
           }
         />
-         <Route
+        <Route
           path="/product-detail/:id"
           element={
             <Sidebar>
@@ -71,7 +73,7 @@ function App() {
           }
         />
         <Route
-          path="/edit-product:id"
+          path="/edit-product/:id"
           element={
             <Sidebar>
               <Layout>
@@ -80,7 +82,7 @@ function App() {
             </Sidebar>
           }
         />
-      
+     
       </Routes>
     </BrowserRouter>
   );
