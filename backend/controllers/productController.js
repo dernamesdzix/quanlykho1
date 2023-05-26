@@ -47,7 +47,7 @@ const createProduct = asyncHandler(async (req, res) => {
     description,
     image: fileData,
   });
-  await product.save();
+
   res.status(201).json(product);
 });
 
