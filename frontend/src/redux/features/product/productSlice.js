@@ -108,6 +108,8 @@ export const updateProduct = createAsyncThunk(
   }
 );
 
+
+
 const productSlice = createSlice({
   name: "product",
   initialState,
@@ -153,6 +155,9 @@ const productSlice = createSlice({
       state.category = uniqueCategory;
     },
   },
+
+
+  
   extraReducers: (builder) => {
     builder
       .addCase(createProduct.pending, (state) => {

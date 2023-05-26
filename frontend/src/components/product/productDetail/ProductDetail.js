@@ -5,7 +5,7 @@ import "./ProductDetail.scss";
 const ProductDetail =() => {
     return (
         <div className="product-detail">
-            <h1>Product Detail</h1>
+            <h3>Product Detail</h3>
         </div>
     )
 
