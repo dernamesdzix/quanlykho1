@@ -1,4 +1,4 @@
-const dotenv = require("dotenv").config();
+const dotenv = require('dotenv').config()
 const mongoose = require("mongoose");
 const express = require("express");
 const bcrypt = require("bcryptjs");
@@ -9,7 +9,7 @@ const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
 const errorHandler = require("./middleWare/errorMiddleware");
 const cookieParser = require("cookie-parser");
-const axios = require("axios");
+const Axios = require("axios");
 const path = require("path");
 
 
@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use( cors({
       origin: ["http://localhost:3000"],
       credentials: true,
@@ -55,5 +56,5 @@ mongoose.connect(process.env.MONGO_URI)
             })
         })
         .catch((err) => console.log(err));
-       
+
 
