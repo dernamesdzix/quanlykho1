@@ -1,58 +1,57 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-
-const productSchema = new mongoose.Schema({
+const productSchema = mongoose.Schema(
+  {
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
     },
     name: {
-        type: String,
-        required: [true, "Please add a name"],
-        trim: true,
+      type: String,
+      required: [true, "Please add a name"],
+      trim: true,
     },
     sku: {
-        type: String,
-        required: [true, "Please add a sku"],
-        default: "SKU",
-        trim: true,
+      type: String,
+      required: true,
+      default: "SKU",
+      trim: true,
     },
     category: {
-        type: String,
-        required: [true, "Please add a category"],
-        trim: true,
+      type: String,
+      required: [true, "Please add a category"],
+      trim: true,
     },
     quantity: {
-        type: String,
-        required: [true, "Please add a quantity"],
-        trim: true,
+      type: String,
+      required: [true, "Please add a quantity"],
+      trim: true,
     },
     price: {
-        type: String,
-        required: [true, "Please add a price"],
-        trim: true,
+      type: String,
+      required: [true, "Please add a price"],
+      trim: true,
     },
     description: {
-        type: String,
-        required: [true, "Please add a description"],
-        trim: true,
+      type: String,
+      required: [true, "Please add a description"],
+      trim: true,
     },
     image: {
-        type: Object,
-        default: {}
+      type: Object,
+      default: {},
     },
-
-
-},
-
-{
-    timestamps: true, // Add timestamps option
-}
+  },
+  {
+    timestamps: true,
+  }
 );
 
+// Add custom instance method to the schema
+productSchema.methods.removeProduct = async function () {
+  await this.deleteOne();
+};
+
 const Product = mongoose.model("Product", productSchema);
-
 module.exports = Product;
-

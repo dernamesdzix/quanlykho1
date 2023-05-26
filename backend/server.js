@@ -1,60 +1,49 @@
-const dotenv = require('dotenv').config()
-const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 const express = require("express");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const cors = require("cors");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
 const errorHandler = require("./middleWare/errorMiddleware");
 const cookieParser = require("cookie-parser");
-const Axios = require("axios");
 const path = require("path");
-
-
-
-
 
 const app = express();
 
-// middlewares
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+// Middlewares
 app.use(express.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
-app.use( cors({
-      origin: ["http://localhost:3000"],
-      credentials: true,
-    })
-  );
-  
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-
-
-// routes middleware
+// Routes Middleware
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 
 
-// routes
+// Routes
 app.get("/", (req, res) => {
-    res.send("Home page!");
+  res.send("Home Page");
 });
 
-// error Middleware
+// Error Middleware
 app.use(errorHandler);
-
-//connect DB
+// Connect to DB and start server
 const PORT = process.env.PORT || 5000;
-mongoose.connect(process.env.MONGO_URI)
-        .then(() => {
-            app.listen(PORT, () => {
-                console.log(`Server is running on port ${PORT}`)
-            })
-        })
-        .catch((err) => console.log(err));
-
-
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server Running on port ${PORT}`);
+    });
+  })
+  .catch((err) => console.log(err));

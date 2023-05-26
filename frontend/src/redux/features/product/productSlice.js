@@ -112,7 +112,6 @@ const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-
     CALC_STORE_VALUE(state, action) {
       const products = action.payload;
       const array = [];
@@ -126,7 +125,6 @@ const productSlice = createSlice({
       }, 0);
       state.totalStoreValue = totalValue;
     },
-
     CALC_OUTOFSTOCK(state, action) {
       const products = action.payload;
       const array = [];
@@ -143,7 +141,6 @@ const productSlice = createSlice({
       });
       state.outOfStock = count;
     },
-
     CALC_CATEGORY(state, action) {
       const products = action.payload;
       const array = [];
@@ -156,7 +153,6 @@ const productSlice = createSlice({
       state.category = uniqueCategory;
     },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(createProduct.pending, (state) => {
@@ -225,7 +221,7 @@ const productSlice = createSlice({
       .addCase(updateProduct.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(updateProduct.fulfilled, (state, action) => {
+      .addCase(updateProduct.fulfilled, (state, _action) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;

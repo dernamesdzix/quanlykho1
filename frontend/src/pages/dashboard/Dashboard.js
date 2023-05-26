@@ -15,15 +15,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (isLoggedIn === true) {
-      dispatch(getProducts())
+      dispatch(getProducts());
     }
-    
-
+  
     if (isError) {
-      console.log(message)
+      console.log(message);
     }
-
-  }, [isLoggedIn, isError, message, dispatch,])
+  }, [isLoggedIn, dispatch]);
+  
   return (
     <div>
       

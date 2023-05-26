@@ -86,7 +86,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error("User not authorized");
   }
-  await product.remove();
+  await product.removeProduct();
   res.status(200).json({ message: "Product deleted." });
 });
 
@@ -147,7 +147,7 @@ const updateProduct = asyncHandler(async (req, res) => {
       runValidators: true,
     }
   );
-  await product.save();
+
   res.status(200).json(updatedProduct);
 });
 
