@@ -1,7 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require('cloudinary').v2;
+
 
 // Create Prouct
 const createProduct = asyncHandler(async (req, res) => {
@@ -19,7 +20,7 @@ const createProduct = asyncHandler(async (req, res) => {
     // Save image to cloudinary
     let uploadedFile;
     try {
-      uploadedFile = await cloudinary.uploader.upload(req.file.path, {
+      uploadedFile = await cloudinary.uploader.upload(req.file.path,{
         folder: "QuanLyKho-App",
         resource_type: "image",
       });
@@ -149,6 +150,9 @@ const updateProduct = asyncHandler(async (req, res) => {
   );
 
   res.status(200).json(updatedProduct);
+  console.log(updatedProduct);
+
+  
 });
 
 module.exports = {

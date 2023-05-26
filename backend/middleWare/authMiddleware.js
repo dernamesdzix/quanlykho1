@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 
 const protect = asyncHandler(async (req, res, next) => {
     try {
-      // const cookies = req.headers.cookie;
+      const cookies = req.headers.cookie;
       // const token = cookies.split("=")[1];
       const token = req.cookies.token;
       if (!token) {
