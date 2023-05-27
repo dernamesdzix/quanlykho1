@@ -1,3 +1,4 @@
+const dontenv  = require("dotenv");
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
