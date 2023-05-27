@@ -16,7 +16,7 @@ const createProduct = asyncHandler(async (req, res) => {
   }
 
   // Handle Image upload
-  var fileData = {};
+  let fileData = {};
   if (req.file) {
     // Save image to cloudinary
     let uploadedFile;
@@ -111,7 +111,7 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 
   // Handle Image upload
-  var fileData = {};
+  let fileData = {};
   if (req.file) {
     // Save image to cloudinary
     let uploadedFile;
