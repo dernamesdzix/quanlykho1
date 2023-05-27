@@ -26,7 +26,8 @@ function App() {
   useEffect(() => {
     async function loginStatus() {
       const status = await getLoginStatus();
-      dispatch(SET_LOGIN(status));
+      dispatch({ type: SET_LOGIN.type, payload: status });
+
     }
     loginStatus();
   }, [dispatch]);
