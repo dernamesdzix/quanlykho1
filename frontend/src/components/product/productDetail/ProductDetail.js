@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import useRedirectLoggedOutUser from "../../../components/customHook/useRedirectLoggedOutUser"
+import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser"
 import { selectIsLoggedIn } from "../../../redux/features/auth/authSlice";
 import { getProduct } from "../../../redux/features/product/productSlice";
 import Card from "../../card/Card";
 import { SpinnerImg } from "../../loader/Loader";
 import "./ProductDetail.scss";
 import DOMPurify from "dompurify";
+
 
 const ProductDetail = () => {
   useRedirectLoggedOutUser("/login");

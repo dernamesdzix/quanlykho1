@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { getLoginStatus } from "../../services/authServices";
+import { getLoginStatus } from "../services/authServices";
 import { toast } from "react-toastify";
-import { SET_LOGIN } from "../../redux/features/auth/authSlice";
+import { SET_LOGIN } from "../redux/features/auth/authSlice";
 
-const useRedirectLoggedOutUser = (path) => {
+export const useRedirectLoggedOutUser = (path) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

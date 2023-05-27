@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import useRedirectLoggedOutUser from '../../components/customHook/useRedirectLoggedOutUser';
+import useRedirectLoggedOutUser from "../../customHook/useRedirectLoggedOutUser";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/features/auth/authSlice';
 import ProductList from '../../components/product/productList/ProductList';

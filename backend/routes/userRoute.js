@@ -12,7 +12,7 @@ router.post("/login", login);
 router.get("/logout", logout);
 router.get("/loggedin", loginStatus);
 router.get("/getuser", protect, getUser);
-router.put("/updateuser", protect, updateUser);
+router.patch("/updateuser", protect, updateUser);
 
 
 
