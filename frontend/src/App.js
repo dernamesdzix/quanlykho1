@@ -15,9 +15,8 @@ import { SET_LOGIN } from "./redux/features/auth/authSlice";
 import AddProduct from "./pages/addProduct/AddProduct";
 import ProductDetail from "./components/product/productDetail/ProductDetail";
 import EditProduct from "./pages/editProduct/EditProduct";
-// import Profile from "./pages/profile/Profile";
-// import EditProfile from "./pages/profile/EditProfile";
-// import Contact from "./pages/contact/Contact";
+import Profile from "./pages/profile/Profile";
+
 
 axios.defaults.withCredentials = true;
 
@@ -39,8 +38,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/forgot" element={<Forgot />} />
-        <Route path="/resetpassword/:resetToken" element={<Reset />} /> */}
 
         <Route
           path="/dashboard"
@@ -82,6 +79,26 @@ function App() {
             </Sidebar>
           }
         />
+        <Route
+          path="/profile"
+          element={
+            <Sidebar>
+              <Layout>
+                <Profile />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        {/* <Route
+          path="/edit-profile"
+          element={
+            <Sidebar>
+              <Layout>
+                <Edit-Profile />
+              </Layout>
+            </Sidebar>
+          }
+        /> */}
      
       </Routes>
     </BrowserRouter>

@@ -28,7 +28,7 @@ const UserSchema = mongoose.Schema ({
     photo: {
         type: String,
         required: [true, "please add a photo"],
-        default: "png-transparent-default-profile-united-states-computer-icons-desktop-free-high-quality-person-icon-miscellaneous-silhouette-symbol.png"
+        default: "default.jpg"
         
     },
     phone: {
