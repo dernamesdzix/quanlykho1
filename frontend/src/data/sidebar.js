@@ -1,4 +1,4 @@
-import { FaTh, FaRegChartBar, FaCommentAlt } from "react-icons/fa";
+import { FaTh, FaRegChartBar, FaFileInvoiceDollar } from "react-icons/fa";
 import { BiImageAdd } from "react-icons/bi";
 
 const menu = [
@@ -23,6 +23,20 @@ const menu = [
       {
         title: "Edit Profile",
         path: "/edit-profile",
+      },
+    ],
+  },
+  {
+    title: "Invoice",
+    icon: <FaFileInvoiceDollar />,
+    childrens: [
+      {
+        title: "Add Invoice",
+        path: "/invoice",
+      },
+      {
+        title: "Edit Invoice",
+        path: "/edit-invoice",
       },
     ],
   },
