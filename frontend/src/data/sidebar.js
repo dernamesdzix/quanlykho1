@@ -35,8 +35,8 @@ const menu = [
         path: "/invoice",
       },
       {
-        title: "Edit Invoice",
-        path: "/edit-invoice",
+        title: "Invoice Detail",
+        path: "/invoice-detail",
       },
     ],
   },
