@@ -17,6 +17,11 @@ import ProductDetail from "./components/product/productDetail/ProductDetail";
 import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages//profile/EditProfile";
+import AddTicket from "./pages/addTicket/AddTicket";
+import TicketDetail from "./components/ticket/ticketDetail/TicketDetail";
+import TicketDashboard from "./pages/t-dashboard/T-Dashboard";
+
+
 
 
 
@@ -99,6 +104,36 @@ function App() {
             <Sidebar>
               <Layout>
                 <EditProfile />
+              </Layout>
+            </Sidebar>
+          }
+        />
+         <Route
+          path="/add-ticket"
+          element={
+            <Sidebar>
+              <Layout>
+                <AddTicket />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        <Route
+          path="/ticket-detail/:id"
+          element={
+            <Sidebar>
+              <Layout>
+                <TicketDetail />
+              </Layout>
+            </Sidebar>
+          }
+        />
+         <Route
+          path="/ticket-dashboard"
+          element={
+            <Sidebar>
+              <Layout>
+                <TicketDashboard />
               </Layout>
             </Sidebar>
           }

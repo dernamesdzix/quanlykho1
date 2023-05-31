@@ -27,16 +27,16 @@ const menu = [
     ],
   },
   {
-    title: "Invoice",
+    title: "Ticket",
     icon: <FaFileInvoiceDollar />,
     childrens: [
       {
-        title: "Add Invoice",
-        path: "/invoice",
+        title: "Add Ticket",
+        path: "/add-ticket",
       },
       {
-        title: "Invoice Detail",
-        path: "/invoice-detail",
+        title: "T-Dashboard",
+        path: "/ticket-dashboard",
       },
     ],
   },
