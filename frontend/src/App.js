@@ -18,8 +18,8 @@ import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages//profile/EditProfile";
 import AddTicket from "./pages/addTicket/AddTicket";
-import TicketDetail from "./components/ticket/ticketDetail/TicketDetail";
-import TicketDashboard from "./pages/t-dashboard/T-Dashboard";
+// import TicketDetail from "./components/ticket/ticketDetail/TicketDetail";
+// import TicketDashboard from "./pages/t-dashboard/T-Dashboard";
 
 
 
@@ -118,7 +118,7 @@ function App() {
             </Sidebar>
           }
         />
-        <Route
+        {/* <Route
           path="/ticket-detail/:id"
           element={
             <Sidebar>
@@ -137,7 +137,7 @@ function App() {
               </Layout>
             </Sidebar>
           }
-        />
+        /> */}
      
       </Routes>
     </BrowserRouter>
